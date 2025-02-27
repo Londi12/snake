@@ -117,7 +117,6 @@ class Obstacle:
         self.position = position
 
     def update(self, snake_positions, food_position, other_obstacles):
-        # Move to a new random position, ensuring no overlaps
         new_pos = (random.randint(0, GRID_COUNT - 1), random.randint(0, GRID_COUNT - 1))
         while (new_pos in snake_positions or 
                new_pos == food_position or 
@@ -212,7 +211,6 @@ def main():
             screen.fill(BLACK)
 
             if not paused:
-                # Update game state
                 if not snake.update(obstacles):
                     game_over_text = font.render(f'Game Over! Score: {score}', True, WHITE)
                     high_score_text = font.render(f'High Score: {high_score}', True, WHITE)
@@ -242,7 +240,6 @@ def main():
                     score += 1
                     high_score = max(high_score, score)
                     food.randomize_position(snake.positions, obstacles)
-                    # Move all obstacles when food is eaten
                     for obstacle in obstacles:
                         obstacle.update(snake.positions, food.position, obstacles)
 
