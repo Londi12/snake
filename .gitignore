@@ -1,0 +1,26 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Game-specific files
+high_score.txt
+
+# Environment and IDE files
+.env
+.venv
+env/
+venv/
+ENV/
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db 
+.qodo
